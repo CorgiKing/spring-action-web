@@ -9,15 +9,15 @@ tasks.withType(JavaCompile) {
 }
 
 war {
-    baseName = "poseidon"
+    baseName = "spring-action-web"
     manifest {
-        attributes("Implementation-Title": "poseidon")
+        attributes("Implementation-Title": "spring-action-web")
     }
 }
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'poseidon',
+        attributes 'Implementation-Title': 'spring-action-web',
                    'Implementation-Version': 1.0
     }
 }
@@ -27,8 +27,8 @@ repositories {
 }
 
 dependencies {
-    compile 'org.springframework:spring-context:5.0.0.RELEASE'
-    compile 'org.springframework:spring-webmvc:5.0.0.RELEASE'
+    compile 'org.springframework:spring-context:4.3.11.RELEASE'
+    compile 'org.springframework:spring-webmvc:4.3.11.RELEASE'
     compile (
     	[group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0']
     )
