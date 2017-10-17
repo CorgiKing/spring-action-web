@@ -3,7 +3,12 @@ import javax.servlet.Filter;
 import javax.servlet.ServletRegistration.Dynamic;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-
+/**
+ * 以Java方式启动DispatcherServlet,需打成war包放在tomcat中运行
+ * 
+ * @author Corgi King
+ *
+ */
 public class WebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override
