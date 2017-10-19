@@ -14,7 +14,7 @@
 
 	<context:component-scan base-package="org.corgiking" />
 	
-	<import resource="flow.xml"/>
+	<!-- <import resource="flow.xml"/> -->
 
 	<!-- controller返回一个map的json对象 -->
 	<!-- DefaultAnnotationHandlerMapping和AnnotationMethodHandlerAdapter -->

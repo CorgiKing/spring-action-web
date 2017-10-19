@@ -6,6 +6,34 @@
         http://www.springframework.org/schema/webflow-config
         http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.3.xsd">
 
+	<!-- P276 -->
 
+	<!-- 程序流程器：负责创建和执行流程，但它并不负责加载流程定义 -->
+	<flow:flow-executor id="testFlowExecutor" />
+	
+	<!-- 流程注册表 ：加载流程定义并让流程执行器能够使用它们-->
+	<!-- 流程注册表会在“/WEB-INF/flows”目录下查找流程定义 -->
+	<!-- 文件名以“-flow.xml”结尾的XML文件都将视为流程定义 -->
+	<flow:flow-registry id="testFlowRegistry" base-path="/WEB-INF/flows">
+		<flow:flow-location-pattern value="*-flow.xml"/>
+	</flow:flow-registry>
+	
+	<!-- 直接指定流程定义 -->
+	<!-- 这样配置的话，流程的ID是从流程定义文件的文件名中获得的，在这里就是testflow -->
+	<!-- 也可以显示指定流程ID,通过<flow:flow-location>元素的id属性来进行设置 -->
+	<!-- <flow:flow-registry id="testFlowRegistry">
+		<flow:flow-location path="/WEB-INF/flows/testflow.xml"/>
+	</flow:flow-registry> -->
+	
+	<!-- 帮助DispatcherServlet将流程请求发送给Spring Web Flow -->
+	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+		<property name="flowRegistry" ref="testFlowRegistry"/>
+	</bean>
+	
+	<!-- FlowHandlerAdapter等同于SpringMVC的控制器，它会响应发送的流程请求并对其进行处理 -->
+	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+		<property name="flowExecutor" ref="testFlowExecutor"/>
+	</bean>
+	
 </beans>
 

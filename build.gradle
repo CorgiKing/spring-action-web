@@ -17,8 +17,7 @@ war {
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'spring-action-web',
-                   'Implementation-Version': 1.0
+        attributes 'Implementation-Title': 'spring-action-web'
     }
 }
 
@@ -29,6 +28,14 @@ repositories {
 dependencies {
     compile 'org.springframework:spring-context:4.3.11.RELEASE'
     compile 'org.springframework:spring-webmvc:4.3.11.RELEASE'
+    
+    compile 'org.springframework.security:spring-security-web:4.2.3.RELEASE'
+    
+    //spring-web-flow流程定义
+    //compile 'org.springframework.webflow:spring-webflow:2.4.5.RELEASE'
+    
+    //AbstractAnnotationConfigDispatcherServletInitializer
+    //java启动Spring
     compile (
     	[group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0']
     )
