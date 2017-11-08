@@ -29,6 +29,10 @@ dependencies {
     compile 'org.springframework:spring-context:4.3.11.RELEASE'
     compile 'org.springframework:spring-webmvc:4.3.11.RELEASE'
     
+    //spring-security基础依赖
+    compile 'org.springframework.security:spring-security-core:4.2.3.RELEASE'
+    compile 'org.springframework.security:spring-security-config:4.2.3.RELEASE'
+    //web中实现security
     compile 'org.springframework.security:spring-security-web:4.2.3.RELEASE'
     
     //spring-web-flow流程定义

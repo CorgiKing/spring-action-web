@@ -10,6 +10,7 @@ public class DemoApi {
 
 	@GetMapping("/s")
 	public String getS(){
+		System.out.println("SSS");
 		return "SSS";
 	}
 	
